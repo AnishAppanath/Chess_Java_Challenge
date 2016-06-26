@@ -33,6 +33,9 @@ public class Constants {
 	public static final String ROOK = "Number of ROOKS: ";
 	public static final String KNIGHT = "Number of KNIGHTS: ";
 	public static final String BISHOP = "Number of BISHOPS: ";
+	public static final String THANK = "Thank you for the input.";
+	public static final String WAIT = "Please wait while the application is calculating the unique configurations.";
+	public static final String THANKYOU_FOR_USING = "Thank you for using the application.";
 	public static final String TOTAL_BOARDS = "Number of boards: ";
 	public static final String TOTAL_TIME = "Total time : ";
 	public static final String MINUTES = " minutes ";
