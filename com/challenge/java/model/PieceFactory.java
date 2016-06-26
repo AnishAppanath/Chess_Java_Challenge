@@ -14,7 +14,7 @@ public class PieceFactory {
 		 * @param pieceType
 		 * @return
 		 */
-	   public Piece getPiece(String pieceType){
+	   public static Piece getPiece(String pieceType){
 		   if(Constants.KING_SYMBOL.equals(pieceType)){
 	 			return new King();
 	 		} else if(Constants.ROOK_SYMBOL.equals(pieceType)){
@@ -36,7 +36,7 @@ public class PieceFactory {
 	     * @param col
 	     * @return
 	     */
-	   public Piece getPiece(String pieceType, int row, int col){
+	   public static Piece getPiece(String pieceType, int row, int col){
 	      	if(Constants.KING_SYMBOL.equals(pieceType)){
 	 			return new King(row, col);
 	 		} else if(Constants.ROOK_SYMBOL.equals(pieceType)){
