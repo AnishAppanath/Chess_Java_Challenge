@@ -9,15 +9,14 @@ import com.challenge.java.model.PieceFactory;
 
 public class Resolve {
 	
-	public static final PieceFactory pieceFactory = new PieceFactory();
-
 	/**
 	 * 
 	 * @param board 		- Board details
 	 * @param boards 		- All solution boards
 	 * @param lastPieces	- Last position for each kind of piece in the board 
+	 * @throws IOException 
 	 */
-	public void resolve(Board board, HashMap<String, Board> boards, HashMap<String, Piece> lastPieces, boolean printBoards){
+	public void resolve(Board board, HashMap<String, Board> boards, HashMap<String, Piece> lastPieces, boolean printBoards) {
 		
 		ArrayList<String> remainingPieces = board.getRemainingPieces();
 		
@@ -42,8 +41,8 @@ public class Resolve {
 				if(board.getBoard()[row][col] != null)
 					continue;
 				
-				Piece pieceToPut = pieceFactory.getPiece(piece,row, col);
-				
+				Piece pieceToPut = PieceFactory.getPiece(piece,row, col);
+				String pieceSymbol = pieceToPut.toString();
 				// Check if it is possible to put the piece into the board safely
 				if(!pieceToPut.isPossible(board))
 					continue;
@@ -51,12 +50,13 @@ public class Resolve {
 				// Add piece piece to the board as partial solution
 				board.addPiece(pieceToPut);
 				
-				lastPieces.put(pieceToPut.toString(), pieceToPut);
+				lastPieces.put(pieceSymbol, pieceToPut);
+				String boardPattern = board.boardPattern();
 				
 				if(remainingPieces.isEmpty()){
 					// If there is not more pieces is a final solution
 					// Avoid duplicate results using a unique key (the board itself)
-					boards.put(board.toString(), board);
+					boards.put(boardPattern, board);
 					if (printBoards)
 						board.printBoard();
 				
