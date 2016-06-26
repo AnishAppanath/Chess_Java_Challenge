@@ -66,7 +66,8 @@ public class Chess {
 		if(opt == 2 || opt == 4){
 			printBoards = true;
 		}
-
+		System.out.println(Constants.THANK);
+		System.out.println(Constants.WAIT);
 		System.out.println();
 		System.out.println();
 
@@ -92,9 +93,8 @@ public class Chess {
 		} else {
 			System.out.println(Constants.TOTAL_TIME + (totalTime) + Constants.MILLISECONDS);
 		}
-
+		System.out.println(Constants.THANKYOU_FOR_USING);
 	}
-
 
 	/**
 	 * Fill the board with input pieces
@@ -128,7 +128,7 @@ public class Chess {
 
 
 	/**
-	 * Read an int from the input. 
+	 * Validates the user inputs. 
 	 */
 	private static int validateInput(Scanner in, String inputStr, String piece) {
 		int input;
@@ -150,4 +150,3 @@ public class Chess {
 	}
 
 }
-
