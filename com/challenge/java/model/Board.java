@@ -155,8 +155,11 @@ public class Board {
 		System.out.println();
 	}
 	
-	@Override
-	public String toString(){
+	
+	/**
+	 * Creating the board pattern
+	 */
+	public String boardPattern(){
 		String result = Constants.EMPTY;
 		
 		for(int row=0; row< this.rows; row++){
